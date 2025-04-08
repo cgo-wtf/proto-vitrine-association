@@ -6,44 +6,556 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
+		
+		<!-- Section Héro -->
+		<section class="hero-section">
+			<div class="hero-content">
+				<h1 data-aos="fade-up" data-aos-duration="1000">UDAF du Rhône</h1>
+				<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+					Unir, Défendre et Accompagner les Familles
+				</p>
+				<a href="#mission" class="scroll-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+					<span>Découvrir</span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M12 5v14M5 12l7 7 7-7"/>
+					</svg>
+				</a>
+			</div>
+		</section>
+
+		<!-- Section Mission -->
+		<section id="mission" class="section mission-section">
+			<div class="container">
+				<h2 data-aos="fade-up" data-aos-duration="1000">Notre Mission</h2>
+				<p class="lead-text" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+					L'Union Départementale des Associations Familiales du Rhône représente et défend les intérêts des familles auprès des pouvoirs publics et des institutions.
+				</p>
+				<div class="mission-grid">
+					<div class="mission-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+						<div class="mission-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+								<circle cx="9" cy="7" r="4"></circle>
+								<path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+								<path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+							</svg>
+						</div>
+						<h3>Représenter</h3>
+						<p>Porter la voix des familles auprès des institutions et des pouvoirs publics</p>
+					</div>
+					<div class="mission-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+						<div class="mission-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+								<polyline points="22 4 12 14.01 9 11.01"></polyline>
+							</svg>
+						</div>
+						<h3>Soutenir</h3>
+						<p>Accompagner les familles dans leur quotidien et dans leurs moments difficiles</p>
+					</div>
+					<div class="mission-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+						<div class="mission-icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+								<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+							</svg>
+						</div>
+						<h3>Innover</h3>
+						<p>Développer des services et des programmes adaptés aux besoins évolutifs des familles</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Services -->
+		<section class="section services-section">
+			<div class="parallax-bg"></div>
+			<div class="container">
+				<h2 data-aos="fade-up" data-aos-duration="1000">Nos Services</h2>
+				<div class="services-wrapper">
+					<div class="service-item" data-aos="fade-right" data-aos-duration="1000">
+						<h3>Protection Juridique</h3>
+						<p>Services de tutelle, curatelle et mandats de protection future pour les personnes vulnérables</p>
+					</div>
+					<div class="service-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+						<h3>Médiation Familiale</h3>
+						<p>Accompagnement dans la résolution des conflits familiaux et le maintien des liens parents-enfants</p>
+					</div>
+					<div class="service-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="400">
+						<h3>Aide à la Parentalité</h3>
+						<p>Conseils, formations et ateliers pour soutenir les parents dans leur rôle éducatif</p>
+					</div>
+					<div class="service-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="600">
+						<h3>Information et Conseil</h3>
+						<p>Points d'information sur les droits des familles, le logement, la santé et l'éducation</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Engagement -->
+		<section class="section engagement-section">
+			<div class="container">
+				<div class="engagement-content">
+					<div class="engagement-text" data-aos="fade-right" data-aos-duration="1000">
+						<h2>Notre Engagement</h2>
+						<p>Depuis plus de 75 ans, l'UDAF du Rhône 69 s'engage pour défendre les intérêts des familles et contribuer à leur épanouissement.</p>
+						<p>Notre association réunit plus de 100 associations familiales locales et représente plus de 10 000 familles dans le département.</p>
+						<a href="/annuaire" class="cta-button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+							Découvrir nos associations
+						</a>
+					</div>
+					<div class="engagement-image" data-aos="fade-left" data-aos-duration="1000">
+						<img src="/blog-placeholder-3.jpg" alt="Réunion de l'UDAF du Rhône" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Contact -->
+		<section class="section contact-section">
+			<div class="container">
+				<h2 data-aos="fade-up" data-aos-duration="1000">Nous Contacter</h2>
+				<div class="contact-wrapper">
+					<div class="contact-info" data-aos="fade-right" data-aos-duration="1000">
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+									<circle cx="12" cy="10" r="3"></circle>
+								</svg>
+							</div>
+							<div>
+								<h4>Adresse</h4>
+								<p>12 bis rue Jean-Marie Chavant<br>69007 Lyon</p>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+								</svg>
+							</div>
+							<div>
+								<h4>Téléphone</h4>
+								<p>04 72 76 12 00</p>
+							</div>
+						</div>
+						<div class="contact-item">
+							<div class="contact-icon">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+									<polyline points="22,6 12,13 2,6"></polyline>
+								</svg>
+							</div>
+							<div>
+								<h4>Email</h4>
+								<p>contact@udaf69.fr</p>
+							</div>
+						</div>
+					</div>
+					<div class="contact-image" data-aos="fade-left" data-aos-duration="1000">
+						<img src="/blog-placeholder-5.jpg" alt="Bâtiment de l'UDAF du Rhône" />
+					</div>
+				</div>
+			</div>
+		</section>
+
 		<Footer />
+
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Initialisation des animations AOS
+				AOS.init({
+					once: false,
+					duration: 800,
+					offset: 100,
+				});
+
+				// Animation de défilement en douceur
+				document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+					anchor.addEventListener('click', function (e) {
+						e.preventDefault();
+						
+						const targetId = this.getAttribute('href');
+						const targetElement = document.querySelector(targetId);
+						
+						if (targetElement) {
+							window.scrollTo({
+								top: targetElement.offsetTop,
+								behavior: 'smooth'
+							});
+						}
+					});
+				});
+
+				// Animation au défilement pour la section parallax
+				window.addEventListener('scroll', () => {
+					const scrollPosition = window.scrollY;
+					const parallaxBg = document.querySelector('.parallax-bg');
+					if (parallaxBg) {
+						parallaxBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+					}
+				});
+			});
+		</script>
+
+		<style>
+			/* Styles généraux */
+			:root {
+				--primary-color: #0066cc;
+				--secondary-color: #E8E8ED;
+				--accent-color: #428bff;
+				--text-color: #1d1d1f;
+				--text-light: #86868b;
+				--bg-white: #ffffff;
+				--bg-light: #f5f5f7;
+				--transition: all 0.3s ease;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+				line-height: 1.6;
+				color: var(--text-color);
+				overflow-x: hidden;
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			.section {
+				padding: 6rem 0;
+				position: relative;
+				overflow: hidden;
+			}
+
+			h1, h2, h3, h4 {
+				font-weight: 600;
+				letter-spacing: -0.02em;
+				line-height: 1.2;
+			}
+
+			h1 {
+				font-size: 4rem;
+				margin-bottom: 1rem;
+			}
+
+			h2 {
+				font-size: 2.8rem;
+				margin-bottom: 2rem;
+				text-align: center;
+			}
+
+			h3 {
+				font-size: 1.8rem;
+				margin-bottom: 1rem;
+			}
+
+			p {
+				margin-bottom: 1.5rem;
+				font-size: 1.1rem;
+				color: var(--text-light);
+			}
+
+			.lead-text {
+				font-size: 1.4rem;
+				line-height: 1.6;
+				max-width: 800px;
+				margin: 0 auto 3rem;
+				text-align: center;
+			}
+
+			/* Section Héro */
+			.hero-section {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 0 2rem;
+				background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)), url('/udaf69-hero.png');
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				color: white;
+			}
+
+			.hero-content {
+				max-width: 800px;
+			}
+
+			.hero-section h1 {
+				font-size: 5rem;
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+				margin-bottom: 1.5rem;
+			}
+
+			.hero-section p {
+				font-size: 1.8rem;
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+				margin-bottom: 2.5rem;
+				color: white;
+			}
+
+			.scroll-btn {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				color: white;
+				text-decoration: none;
+				font-size: 1.2rem;
+				padding: 0.5rem 1.5rem;
+				border: 2px solid white;
+				border-radius: 50px;
+				transition: var(--transition);
+			}
+
+			.scroll-btn:hover {
+				background-color: white;
+				color: var(--primary-color);
+			}
+
+			/* Section Mission */
+			.mission-section {
+				background-color: var(--bg-white);
+			}
+
+			.mission-grid {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+				margin-top: 3rem;
+			}
+
+			.mission-card {
+				padding: 2.5rem;
+				border-radius: 20px;
+				background-color: var(--bg-light);
+				text-align: center;
+				transition: var(--transition);
+			}
+
+			.mission-card:hover {
+				transform: translateY(-10px);
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+			}
+
+			.mission-icon {
+				margin-bottom: 1.5rem;
+				color: var(--primary-color);
+			}
+
+			/* Section Services */
+			.services-section {
+				background-color: var(--bg-light);
+				color: var(--text-color);
+				position: relative;
+			}
+
+			.parallax-bg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url('/blog-placeholder-2.jpg');
+				background-size: cover;
+				background-position: center;
+				opacity: 0.1;
+				z-index: 0;
+			}
+
+			.services-wrapper {
+				position: relative;
+				z-index: 1;
+				display: flex;
+				flex-direction: column;
+				gap: 3rem;
+				max-width: 800px;
+				margin: 0 auto;
+			}
+
+			.service-item {
+				background-color: var(--bg-white);
+				padding: 2.5rem;
+				border-radius: 20px;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+				transition: var(--transition);
+			}
+
+			.service-item:hover {
+				transform: translateX(10px);
+				box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+			}
+
+			.service-item h3 {
+				color: var(--primary-color);
+				margin-bottom: 1rem;
+			}
+
+			/* Section Engagement */
+			.engagement-section {
+				background-color: var(--bg-white);
+			}
+
+			.engagement-content {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem;
+				align-items: center;
+			}
+
+			.engagement-text {
+				padding-right: 2rem;
+			}
+
+			.engagement-image img {
+				width: 100%;
+				height: auto;
+				border-radius: 20px;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+				transition: var(--transition);
+			}
+
+			.engagement-image img:hover {
+				transform: scale(1.03);
+			}
+
+			.cta-button {
+				display: inline-block;
+				padding: 1rem 2rem;
+				background-color: var(--primary-color);
+				color: white;
+				text-decoration: none;
+				border-radius: 50px;
+				font-weight: 600;
+				transition: var(--transition);
+				margin-top: 1rem;
+			}
+
+			.cta-button:hover {
+				background-color: var(--accent-color);
+				transform: translateY(-3px);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+			}
+
+			/* Section Contact */
+			.contact-section {
+				background-color: var(--bg-light);
+				overflow: hidden;
+			}
+
+			.contact-wrapper {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 4rem;
+				align-items: center;
+			}
+
+			.contact-info {
+				display: flex;
+				flex-direction: column;
+				gap: 2rem;
+			}
+
+			.contact-item {
+				display: flex;
+				gap: 1.5rem;
+				align-items: flex-start;
+			}
+
+			.contact-icon {
+				background-color: var(--primary-color);
+				color: white;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+			}
+
+			.contact-item h4 {
+				margin: 0;
+				margin-bottom: 0.5rem;
+				font-size: 1.2rem;
+			}
+
+			.contact-item p {
+				margin: 0;
+			}
+
+			.contact-image img {
+				width: 100%;
+				height: auto;
+				border-radius: 20px;
+				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+				transition: var(--transition);
+			}
+
+			.contact-image img:hover {
+				transform: scale(1.03);
+			}
+
+			/* Responsive */
+			@media (max-width: 992px) {
+				h1 {
+					font-size: 3.5rem;
+				}
+
+				h2 {
+					font-size: 2.4rem;
+				}
+
+				.mission-grid {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.engagement-content,
+				.contact-wrapper {
+					grid-template-columns: 1fr;
+					gap: 3rem;
+				}
+
+				.engagement-text {
+					padding-right: 0;
+				}
+			}
+
+			@media (max-width: 768px) {
+				.section {
+					padding: 4rem 0;
+				}
+
+				h1 {
+					font-size: 2.8rem;
+				}
+
+				h2 {
+					font-size: 2rem;
+				}
+
+				.hero-section p {
+					font-size: 1.4rem;
+				}
+
+				.lead-text {
+					font-size: 1.2rem;
+				}
+			}
+		</style>
 	</body>
 </html>

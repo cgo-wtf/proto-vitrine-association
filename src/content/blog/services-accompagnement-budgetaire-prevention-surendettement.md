@@ -1,5 +1,5 @@
 ---
-title: "Prévenir le surendettement : découvrez nos services d'accompagnement budgétaire"
+title: "Guide des services d'accompagnement budgétaire de l'UDAF du Rhône"
 description: 'Découvrez nos solutions pour prévenir le surendettement et accompagner les familles en difficulté financière'
 pubDate: 'Jan 10 2025'
 heroImage: '/udaf69-hero.png'

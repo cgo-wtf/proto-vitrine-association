@@ -1,13 +1,11 @@
 ---
-title: 'Ouverture de notre service de médiation familiale le 15 avril'
-description: "L'UDAF du Rhône étend son offre de services avec un nouveau dispositif de médiation familiale"
-pubDate: 'Jul 05 2025'
-heroImage: '/blog-placeholder-3.jpg'
+title: 'Bilan de notre forum "Parentalité et numérique"'
+description: "Retour sur le succès du forum organisé par l'UDAF du Rhône sur les défis de la parentalité à l'ère numérique"
+pubDate: 'Mar 22 2025'
+heroImage: '/blog-placeholder-4.jpg'
 ---
 
-L'UDAF du Rhône est fière d'annoncer le lancement de son nouveau service de médiation familiale, accessible dès le 15 avril 2025. Face à l'augmentation des situations de séparation conflictuelles et leurs impacts sur les enfants, notre équipe s'agrandit avec l'arrivée de deux médiateurs familiaux diplômés d'État.
-
-Ce nouveau service propose un espace neutre de dialogue et d'écoute pour aider les familles à trouver des solutions amiables aux conflits qu'elles traversent. Qu'il s'agisse de séparation, de divorce, de recomposition familiale ou de conflits intergénérationnels, nos médiateurs accompagnent les familles dans la recherche d'accords durables et respectueux de chacun.
+Le 15 mars dernier, l'UDAF du Rhône a organisé son premier forum "Parentalité et numérique" qui a rassemblé plus de 200 participants à l'Espace Citoyen de Lyon. Cet événement, fruit d'une collaboration avec la CAF et la Métropole de Lyon, visait à accompagner les parents face aux défis éducatifs posés par les écrans et les réseaux sociaux.
 
 Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
 

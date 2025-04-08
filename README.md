@@ -1,25 +1,41 @@
-# Astro Starter Kit: Blog
+# proto site web associatif
 
-```sh
-npm create astro@latest -- --template blog
-```
+Ce dépôt contient le code source du site web de l'Union Départementale des Associations Familiales (UDAF) du Rhône.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/blog)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/blog)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/blog/devcontainer.json)
+## Présentation
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Le proto site web associatif est composé de deux parties principales :
 
-![blog](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+- **Blog d'actualités** : Informations sur les événements, services et activités de l'UDAF du Rhône
+- **Annuaire des associations** : Répertoire des associations partenaires de l'UDAF du Rhône
 
-Features:
+![Capture d'écran du site](/public/udaf69-hero.png)
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Déploiement
+
+Le site est configuré pour être déployé automatiquement sur GitHub Pages à l'aide de GitHub Actions. À chaque push sur la branche main, le workflow de déploiement est déclenché :
+
+1. Le site est construit avec la commande `npm run build`
+2. Les fichiers générés sont déployés sur GitHub Pages
+3. Le site est accessible à l'adresse : https://VOTRE_NOM_UTILISATEUR.github.io/annuaire-blog
+
+Pour activer le déploiement :
+- Dans les paramètres du dépôt GitHub, section "Pages", définissez la source sur "GitHub Actions"
+- Assurez-vous que votre nom d'utilisateur est correctement configuré dans `astro.config.mjs`
+
+## Fonctionnalités
+
+- ✅ Blog d'actualités avec articles au format Markdown et MDX
+- ✅ Annuaire d'associations partenaires avec système de filtrage
+- ✅ Interface responsive adaptée aux mobiles et tablettes
+- ✅ SEO optimisé avec métadonnées et OpenGraph
+- ✅ Flux RSS pour suivre les actualités
+- ✅ Design moderne avec animations au défilement (AOS)
+- ✅ 100/100 Performance Lighthouse
+- ✅ URLs canoniques et métadonnées OpenGraph pour le référencement
+- ✅ Support du plan du site (sitemap)
+- ✅ Support du flux RSS
+- ✅ Support des formats Markdown et MDX
 
 ## 🚀 Project Structure
 
@@ -46,23 +62,31 @@ The `src/content/` directory contains "collections" of related Markdown and MDX 
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
+## 🧞 Commandes
 
-All commands are run from the root of the project, from a terminal:
+Toutes les commandes sont exécutées depuis la racine du projet, dans un terminal :
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Commande                  | Action                                            |
+| :------------------------ | :------------------------------------------------ |
+| `npm install`             | Installe les dépendances                         |
+| `npm run dev`             | Démarre le serveur de développement local à `localhost:4321` |
+| `npm run build`           | Construit le site pour la production dans `./dist/` |
+| `npm run preview`         | Prévisualise le site construit avant déploiement   |
+| `npm run astro ...`       | Exécute les commandes CLI comme `astro add`, `astro check` |
+| `npm run astro -- --help` | Affiche l'aide pour l'utilisation de la CLI Astro  |
 
-## 👀 Want to learn more?
+## 📝 Maintenance
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Ajouter un article de blog
 
-## Credit
+Pour ajouter un nouvel article au blog :
+1. Créez un fichier Markdown (.md) ou MDX (.mdx) dans le dossier `src/content/blog/`
+2. Ajoutez l'en-tête frontmatter avec les métadonnées (titre, description, date, image)
+3. Rédigez le contenu de l'article en utilisant la syntaxe Markdown
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+### Modifier l'annuaire des associations
+
+Pour mettre à jour l'annuaire des associations :
+1. Modifiez le fichier CSV dans `public/data/associations.csv`
+2. Suivez le format existant : nom, description, site, email, téléphone, catégories
+3. Pour les catégories, utilisez une liste séparée par des virgules

@@ -1,0 +1,294 @@
+---
+import Layout from '../../layouts/BlogPost.astro';
+import { SITE_TITLE } from '../../consts';
+import { parse } from 'csv-parse/sync';
+import { readFileSync } from 'fs';
+import path from 'path';
+
+// Lire et analyser le fichier CSV
+const csvFilePath = path.join(process.cwd(), 'public', 'data', 'associations.csv');
+const csvData = readFileSync(csvFilePath, 'utf-8');
+const records = parse(csvData, {
+  columns: true,
+  skip_empty_lines: true
+});
+
+// Transformer les données pour gérer les catégories comme des tableaux
+const associations = records.map(record => {
+  // Convertir la chaîne de catégories en tableau
+  const categories = record.categories ? 
+    record.categories.split(',').map(cat => cat.trim()) : [];
+  
+  return { ...record, categories };
+}).sort((a, b) => a.nom.localeCompare(b.nom));
+
+// Extraire toutes les catégories uniques pour le filtre
+const allCategories = [...new Set(
+  associations.flatMap(asso => asso.categories)
+)].sort();
+---
+
+<Layout
+  title={`Annuaire des associations partenaires`}
+  description="Liste des associations partenaires"
+  pubDate={new Date()}
+  heroImage="/blog-placeholder-about.jpg"
+  fullWidth={true}
+>
+  <div class="filter-container">
+    <div class="search-box">
+      <label for="search-input">Rechercher :</label>
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Rechercher une association..."
+      />
+    </div>
+
+    <div class="category-filter">
+      <label for="category-select">Filtrer par catégorie :</label>
+      <select id="category-select">
+        <option value="">Toutes les catégories</option>
+        {allCategories.map((category) => (
+          <option value={category}>{category}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+
+  <div id="associations-grid" class="associations-grid">
+    {associations.map((asso) => (
+      <div class="association-card" data-categories={asso.categories.join(',')}>
+        <h2>{asso.nom}</h2>
+        <p class="description">{asso.description}</p>
+        
+        <div class="categories">
+          {asso.categories.map((cat) => (
+            <span class="category-tag">{cat}</span>
+          ))}
+        </div>
+        
+        <div class="contact-info">
+          {asso.site && (
+            <p>
+              <strong>Site web :</strong> 
+              <a href={asso.site} target="_blank" rel="noopener noreferrer">
+                {asso.site.replace(/^https?:\/\//, '')}
+              </a>
+            </p>
+          )}
+          {asso.email && (
+            <p>
+              <strong>Email :</strong> 
+              <a href={`mailto:${asso.email}`}>{asso.email}</a>
+            </p>
+          )}
+          {asso.telephone && (
+            <p>
+              <strong>Téléphone :</strong> 
+              <a href={`tel:${asso.telephone.replace(/\s/g, '')}`}>{asso.telephone}</a>
+            </p>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <div id="no-results" class="no-results hidden">
+    Aucune association ne correspond à votre recherche.
+  </div>
+
+  <script>
+    // Fonction pour filtrer les associations
+    function filterAssociations() {
+      const searchInput = document.getElementById('search-input');
+      const categorySelect = document.getElementById('category-select');
+      const cards = document.querySelectorAll('.association-card');
+      const noResults = document.getElementById('no-results');
+      
+      const searchTerm = searchInput.value.toLowerCase();
+      const selectedCategory = categorySelect.value.toLowerCase();
+      
+      let visibleCount = 0;
+      
+      cards.forEach(card => {
+        const content = card.textContent.toLowerCase();
+        const categories = card.getAttribute('data-categories').toLowerCase();
+        
+        const matchesSearch = searchTerm === '' || content.includes(searchTerm);
+        const matchesCategory = selectedCategory === '' || categories.includes(selectedCategory);
+        
+        if (matchesSearch && matchesCategory) {
+          card.style.display = 'block';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      // Afficher un message si aucun résultat
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+    
+    // Ajouter les écouteurs d'événements
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('search-input');
+      const categorySelect = document.getElementById('category-select');
+      
+      searchInput.addEventListener('input', filterAssociations);
+      categorySelect.addEventListener('change', filterAssociations);
+    });
+  </script>
+</Layout>
+
+<style>
+  .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: rgba(var(--accent), 10%);
+    border-radius: 8px;
+  }
+
+  .search-box, .category-filter {
+    flex: 1;
+    min-width: 250px;
+  }
+
+  .search-box label, .category-filter label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--accent);
+  }
+
+  input[type="text"], select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(var(--accent), 25%);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+
+  input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: rgb(var(--accent));
+    box-shadow: 0 0 0 2px rgba(var(--accent), 20%);
+  }
+
+  .associations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  
+  .association-card {
+    border: 2px solid rgba(var(--accent), 35%);
+    border-radius: 10px;
+    padding: 1.7rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(var(--black), 8%);
+    background-color: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .association-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(var(--black), 15%);
+    border-color: rgba(var(--accent), 50%);
+  }
+  
+  .association-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(var(--accent), 70%), rgba(var(--accent), 30%));
+  }
+  
+  .association-card h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .category-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(var(--accent), 15%);
+    color: rgb(var(--accent));
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .category-tag:hover {
+    background-color: rgba(var(--accent), 25%);
+  }
+  
+  .contact-info {
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(var(--accent), 15%);
+    padding-top: 1rem;
+  }
+  
+  .contact-info p {
+    margin: 0.5rem 0;
+  }
+  
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+  }
+
+  .hidden {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .associations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

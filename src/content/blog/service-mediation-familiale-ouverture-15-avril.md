@@ -1,5 +1,5 @@
 ---
-title: 'Ouverture de notre service de médiation familiale le 15 avril'
+title: 'Lancement du nouveau service de médiation familiale'
 description: "L'UDAF du Rhône étend son offre de services avec un nouveau dispositif de médiation familiale"
 pubDate: 'Jul 05 2025'
 heroImage: '/blog-placeholder-3.jpg'

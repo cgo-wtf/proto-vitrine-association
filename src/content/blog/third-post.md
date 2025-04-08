@@ -1,11 +1,13 @@
 ---
-title: 'Third post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 22 2022'
+title: 'Recrutement : trois postes de délégués mandataires judiciaires à pourvoir'
+description: "Face à l'augmentation des besoins en protection des majeurs vulnérables, l'UDAF renforce ses équipes"
+pubDate: 'Feb 15 2025'
 heroImage: '/blog-placeholder-2.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Dans un contexte de vieillissement de la population et d'augmentation des situations de vulnérabilité, l'UDAF du Rhône recrute trois délégués mandataires judiciaires à la protection des majeurs. Ces professionnels auront pour mission d'accompagner des personnes sous mesure de protection (tutelle, curatelle, sauvegarde de justice) dans la gestion de leur patrimoine et la sécurisation de leur parcours de vie.
+
+Les candidats doivent être titulaires du Certificat National de Compétence (CNC) de mandataire judiciaire ou s'engager à suivre cette formation. Sens de l'écoute, rigueur administrative et capacité à travailler en équipe pluridisciplinaire sont des qualités essentielles pour ce poste à forte dimension humaine et sociale.
 
 Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
 
