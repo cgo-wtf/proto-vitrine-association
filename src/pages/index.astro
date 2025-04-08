@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!doctype html>
@@ -16,7 +18,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Header />
 		
 		<!-- Section Héro -->
-		<section class="hero-section">
+		<section class="hero-section" style={`background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)), url(${base}/udaf69-hero.png)`}>
 			<div class="hero-content">
 				<h1 data-aos="fade-up" data-aos-duration="1000">UDAF du Rhône</h1>
 				<p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
@@ -108,7 +110,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 						<h2>Notre Engagement</h2>
 						<p>Depuis plus de 75 ans, l'UDAF du Rhône 69 s'engage pour défendre les intérêts des familles et contribuer à leur épanouissement.</p>
 						<p>Notre association réunit plus de 100 associations familiales locales et représente plus de 10 000 familles dans le département.</p>
-						<a href="/annuaire" class="cta-button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+						<a href={`${base}/annuaire`} class="cta-button" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
 							Découvrir nos associations
 						</a>
 					</div>
@@ -285,7 +287,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				justify-content: center;
 				text-align: center;
 				padding: 0 2rem;
-				background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)), url('/udaf69-hero.png');
 				background-size: cover;
 				background-position: center;
 				background-attachment: fixed;

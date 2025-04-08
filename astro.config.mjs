@@ -8,4 +8,5 @@ export default defineConfig({
 	site: 'https://cgo-wtf.github.io',
 	base: '/proto-vitrine-association',
 	integrations: [mdx(), sitemap()],
+	output: 'static',
 });
