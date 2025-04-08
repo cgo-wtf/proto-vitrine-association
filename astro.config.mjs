@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://VOTRE_NOM_UTILISATEUR.github.io',
-	base: '/annuaire-blog',
+	site: 'https://cgo-wtf.github.io',
+	base: '/proto-vitrine-association',
 	integrations: [mdx(), sitemap()],
 });
